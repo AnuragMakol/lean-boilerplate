@@ -15,3 +15,14 @@ After installing the package as a global executable. You will be able to use **"
 ```bash
 $~ boilerplate
 ```
+
+### Upcoming Features
+
+- NodeJS API Boilerplate
+- NodeJS Shopify App Boilerplate
+- Machine Learning Boilerplate
+- AI Boilerplate
+
+### Author 
+
+Anurag Makol
