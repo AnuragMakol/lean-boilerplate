@@ -18,7 +18,6 @@ $~ boilerplate
 
 ### Upcoming Features
 
-- NodeJS API Boilerplate
 - NodeJS Shopify App Boilerplate
 - Machine Learning Boilerplate
 - AI Boilerplate
