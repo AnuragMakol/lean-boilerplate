@@ -1,0 +1,41 @@
+{
+  "name": "lean-boilerplate",
+  "version": "0.0.1",
+  "description": "A simple cli to scaffold your Node JS app fast for REST API's, Shopify Apps, Machine Learning and AI ",
+  "main": "index.js",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir ."
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "cli",
+    "node cli",
+    "scaffold",
+    "scaffolding",
+    "boilerplate",
+    "shopify",
+    "shopify apps",
+    "shopify api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnuragMakol/lean-boilerplate.git"
+  },
+  "author": "Anurag Makol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnuragMakol/lean-boilerplate/issues"
+  },
+  "homepage": "https://github.com/AnuragMakol/lean-boilerplate#readme",
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  }
+}
