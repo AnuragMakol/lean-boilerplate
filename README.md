@@ -1,5 +1,7 @@
 # Lean Boilerplate
 
+A simple cli to scaffold your Node JS app fast for REST API's, Shopify Apps, Machine Learning and AI.
+
 ## Installation 
 
 ```bash
