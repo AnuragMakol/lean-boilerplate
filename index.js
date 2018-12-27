@@ -33,7 +33,7 @@ prompts([
   },
 ]).then(function (response) {
   if (response.projectConfirm) {
-    
+
     // Initialize Current Path
     var currentPath = shell.pwd();
     var projectPath = shell.pwd();
@@ -57,7 +57,7 @@ prompts([
     shell.cd(currentPath);
 
     // Show Greetings
-    console.log("\nNodeJS API Boilerplate Generated.");
+    console.log("\nBoilerplate Generated.");
     console.log("\nThank you for trying Lean Boilerplate.");
   } else {
     console.log("\nBoilerplate Generation Cancelled.");
