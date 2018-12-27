@@ -6,15 +6,6 @@ var shell = require('shelljs');
 
 prompts([
   {
-    type: 'select',
-    name: 'projectType',
-    message: 'What project type you want to generate?',
-    choices: [
-      { title: 'NodeJS API', value: 'na' },
-      { title: 'NodeJS Shopify App', value: 'nsa' }
-    ]
-  },
-  {
     type: 'text',
     name: 'projectName',
     message: 'What will be your project name?',
@@ -61,20 +52,12 @@ prompts([
     shell.exec(projectURL, { silent: true });
     shell.sed('-i', 'nodejs-api-boilerplate', response.projectName, ['package.json', 'package-lock.json', 'bin/www']);
 
-    switch(response.projectType) {
-      case 'na': 
-      console.log("\nNodeJS API Boilerplate Generated.");
-      break;
-
-      case 'nsa':
-      console.log("\nNodeJS Shopify App Boilerplate Generated.");
-      break;
-    }    
-
     // Move back to the path where the input was made
     shell.cd(currentPath);
-    console.log("\nThank you for trying Lean Boilerplate.");
 
+    // Show Greetings
+    console.log("\nNodeJS API Boilerplate Generated.");
+    console.log("\nThank you for trying Lean Boilerplate.");
   } else {
     console.log("\nBoilerplate Generation Cancelled.");
   }

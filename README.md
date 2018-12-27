@@ -10,7 +10,7 @@ npm install -g lean-boilerplate
 
 ## Getting Started
 
-After installing the package as a global executable. You will be able to use **"Boilerplate"** command to generate new boilerplates
+After installing the package as a global executable. You will be able to use **"Boilerplate"** command to generate new boilerplate.
 
 ```bash
 $~ boilerplate
@@ -51,8 +51,6 @@ JsonWebToken and Nodemailer integration has also been made using the helpers fil
 │       └── style.css
 └── routes.js
 ```
-
-New Files will be added or removed based on the boilerplate selected but the base structure will persist throught the generator.
 
 ## Preinstalled Packages
 
