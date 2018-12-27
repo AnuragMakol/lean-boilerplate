@@ -57,7 +57,7 @@ JsonWebToken and Nodemailer integration has also been made using the helpers fil
 - axios
 - cors*
 - dotenv*
-- jsonwebtoken
+- jsonwebtoken*
 - lodash
 - mongodb*
 - mongoose*

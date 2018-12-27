@@ -33,6 +33,7 @@ prompts([
   },
 ]).then(function (response) {
   if (response.projectConfirm) {
+    
     // Initialize Current Path
     var currentPath = shell.pwd();
     var projectPath = shell.pwd();
