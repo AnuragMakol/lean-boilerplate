@@ -4,16 +4,14 @@
 var prompts = require('prompts');
 var shell = require('shelljs');
 
-var response = prompts([
+prompts([
   {
     type: 'select',
     name: 'projectType',
     message: 'What project type you want to generate?',
     choices: [
       { title: 'NodeJS API', value: 'na' },
-      { title: 'NodeJS Shopify App', value: 'nsa' },
-      { title: 'Machine Learning', value: 'ml' },
-      { title: 'AI', value: 'ai' }
+      { title: 'NodeJS Shopify App', value: 'nsa' }
     ]
   },
   {
@@ -31,7 +29,7 @@ var response = prompts([
     message: 'Where to generate the project?',
     choices: [
       { title: 'Current folder', value: 'current' },
-      { title: 'Create folder from project name', value: 'project' }
+      { title: 'Create folder from project name', value: 'create' }
     ]
   },
   {
@@ -44,30 +42,39 @@ var response = prompts([
   },
 ]).then(function (response) {
   if (response.projectConfirm) {
+    // Initialize Current Path
     var currentPath = shell.pwd();
     var projectPath = shell.pwd();
     var projectURL = '';
 
-    if (response.projectPath == 'project') {
+    // Check type of project
+    if (response.projectPath == 'create') {
       shell.mkdir(response.projectName);
       projectPath = currentPath + '/' + response.projectName;
     }
 
+    // Move to project path
+    shell.cd(projectPath);
+
+    // Pull and Process the project
+    projectURL = 'git clone https://github.com/AnuragMakol/nodejs-api-boilerplate.git .';
+    shell.exec(projectURL, { silent: true });
+    shell.sed('-i', 'nodejs-api-boilerplate', response.projectName, ['package.json', 'package-lock.json', 'bin/www']);
+
     switch(response.projectType) {
-      case 'na': projectURL = 'git clone https://github.com/AnuragMakol/nodejs-api-boilerplate.git .'; break;
-      case 'nsa': projectURL = 'git clone https://github.com/AnuragMakol/nodejs-api-boilerplate.git .'; break;
-      case 'ml': projectURL = 'git clone https://github.com/AnuragMakol/nodejs-api-boilerplate.git .'; break;
-      case 'ai': projectURL = 'git clone https://github.com/AnuragMakol/nodejs-api-boilerplate.git .'; break;
+      case 'na': 
+      console.log("\nNodeJS API Boilerplate Generated.");
+      break;
+
+      case 'nsa':
+      console.log("\nNodeJS Shopify App Boilerplate Generated.");
+      break;
     }    
 
-    shell.cd(projectPath);
-    shell.exec(projectURL, { silent: true });
-    shell.sed('-i', 'nodejs-api-boilerplate', response.projectName, 'package.json');
-    shell.sed('-i', 'nodejs-api-boilerplate', response.projectName, 'package-lock.json');
-    shell.sed('-i', 'nodejs-api-boilerplate', response.projectName, 'bin/www');
+    // Move back to the path where the input was made
     shell.cd(currentPath);
+    console.log("\nThank you for trying Lean Boilerplate.");
 
-    console.log("\nBoilerplate Generated. Thank you for trying Lean Boilerplate.");
   } else {
     console.log("\nBoilerplate Generation Cancelled.");
   }
