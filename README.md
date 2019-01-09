@@ -37,7 +37,7 @@ JsonWebToken and Nodemailer integration has also been made using the helpers fil
 │   │   └── user.js
 │   ├── lang.js
 │   ├── models
-│   │   ├── users.js
+│   │   ├── user.js
 │   │   └── validator
 │   │       └── schemaValidator.js
 │   └── models.js
