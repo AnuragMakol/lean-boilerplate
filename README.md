@@ -16,11 +16,11 @@ After installing the package as a global executable. You will be able to use **"
 $~ boilerplate
 ```
 
-## Basic Project Structure
+## Boilerplate Structure
 
 A basic User Controller and Model has already been made with it collection schema for mongodb with some examples of the validations.
 
-The project uses lang files for the storage of static data and mail structures to be used in the API.
+The boilerplate uses lang files for the storage of static data and mail structures to be used in the API.
 
 JsonWebToken and Nodemailer integration has also been made using the helpers file integration.
 
@@ -64,11 +64,62 @@ JsonWebToken and Nodemailer integration has also been made using the helpers fil
 - mongoose-beautiful-unique-validation*
 - mongoose-validator*
 - multer
-- nodemailer*
+- nodemailer (*)
 - randomstring
+- express-swagger-generator (*)(dev)
 
 (*) Indicates that the package has been integrated with helpers files for plug and play usage. 
+(dev) Indicates its a Developer Dependency
 
-### Author 
+## Environment Variables
+
+A predefined .env.example file is present in the root of the boilerplate. 
+
+The variables are being used throughout the boilerplate and new variables can be added to it and can be accessed anywhere in the boilerplate using **_process.env.VARIABLE_NAME_**
+
+Use the command below to copy the .env.example to a new .env file which the boilerplate will use.
+
+```bash
+cp .env.example .env
+```
+
+#### Contents of the .env
+
+```txt
+MONGO_URL=mongodb://localhost:27017/graphql
+
+SWAGGER_TITLE=NodeJS API Boilerplate
+SWAGGER_DESCRIPTION=NodeJS API Boilerplate - Sample API Sandbox
+SWAGGER_VERSION=1.0.1
+SWAGGER_API_HOST=localhost:3000
+
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_SSL=tls
+SMTP_USER=
+SMTP_PASS=
+
+JWT_KEY=tHisAvErYsECuReKeY
+JWT_AUDIENCE=NoDeGeNeRaToR
+JWT_EXPIRY=10h
+
+PORT=3000
+```
+
+## Swagger Integration
+
+Swagger has been integrated as a middleware in the boilerplate. 
+
+The documentation will be available at 
+
+```
+http://SWAGGER_API_HOST/api-docs
+```
+
+Documentation will be generated automatically by making comments over the methods in the controller files.
+
+Example can be found in **_app > controllers > UserController.js_**
+
+## Author 
 
 Anurag Makol
