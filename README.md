@@ -67,6 +67,7 @@ JsonWebToken and Nodemailer integration has also been made using the helpers fil
 - nodemailer (*)
 - randomstring
 - express-swagger-generator (*)(dev)
+- pm2
 
 (*) Indicates that the package has been integrated with helpers files for plug and play usage. 
 (dev) Indicates its a Developer Dependency
@@ -86,10 +87,10 @@ cp .env.example .env
 #### Contents of the .env
 
 ```txt
-MONGO_URL=mongodb://localhost:27017/graphql
+MONGO_URL=mongodb://localhost:27017/database-name
 
-SWAGGER_TITLE=NodeJS API Boilerplate
-SWAGGER_DESCRIPTION=NodeJS API Boilerplate - Sample API Sandbox
+SWAGGER_TITLE=Boilerplate API
+SWAGGER_DESCRIPTION=Boilerplate - API Sandbox
 SWAGGER_VERSION=1.0.1
 SWAGGER_API_HOST=localhost:3000
 
@@ -119,6 +120,17 @@ http://SWAGGER_API_HOST/api-docs
 Documentation will be generated automatically by making comments over the methods in the controller files.
 
 Example can be found in **_app > controllers > UserController.js_**
+
+## PM2 Integration
+
+Now you can start the PM2 Process Manager and listin to your code changes 
+
+```bash
+npm install -g pm2
+pm2 start
+```
+
+You can use the above script to run your code through the pm2 process manager.
 
 ## Author 
 
