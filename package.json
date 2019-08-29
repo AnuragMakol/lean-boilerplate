@@ -1,6 +1,6 @@
 {
   "name": "lean-boilerplate",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A simple cli to scaffold your Node JS app fast for REST API's, Shopify Apps, Machine Learning and AI",
   "main": "index.js",
   "bin": {
