@@ -55,6 +55,7 @@ JsonWebToken and Nodemailer integration has also been made using the helpers fil
 ## Preinstalled Packages
 
 - axios
+- bcrypt
 - cors*
 - dotenv*
 - jsonwebtoken*
@@ -64,9 +65,9 @@ JsonWebToken and Nodemailer integration has also been made using the helpers fil
 - mongoose-beautiful-unique-validation*
 - mongoose-validator*
 - multer
-- nodemailer (*)
+- nodemailer*
 - randomstring
-- express-swagger-generator (*)(dev)
+- express-swagger-generator* (dev)
 - pm2
 
 (*) Indicates that the package has been integrated with helpers files for plug and play usage. 
@@ -131,6 +132,10 @@ pm2 start
 ```
 
 You can use the above script to run your code through the pm2 process manager.
+
+## Auth Module
+
+A new fully functional Authentication Module has been added to the boilerplate. It can be used as is with any of your new website or it can be taken as a reference on how to follow the standards as set by the boilerplate.
 
 ## Author 
 
